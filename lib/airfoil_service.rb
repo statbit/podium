@@ -17,12 +17,17 @@ class AirfoilService
     make_it_so_speakers
   end
 
+  def self.off
+    a = AirfoilService.new({})
+    AsRunner.new(a.send :all_off_script).run
+    AsRunner.new(a.send :itunes_pause_script).run
+    AsRunner.new(a.send :spotify_pause_script).run
+  end
+
 private
 
   def make_it_so_source
-    AsRunner.new(itunes_pause_script).run
-    AsRunner.new(spotify_pause_script).run
-
+    pause_all
     case @source
     when :itunes
       AsRunner.new(itunes_play_script).run
@@ -31,6 +36,11 @@ private
     end
 
     AsRunner.new(source_script, SOURCE_TO_APP_LOCATION[@source]).run
+  end
+
+  def pause_all
+    AsRunner.new(itunes_pause_script).run
+    AsRunner.new(spotify_pause_script).run
   end
 
   def make_it_so_speakers
