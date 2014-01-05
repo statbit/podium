@@ -7,6 +7,10 @@ gem 'rails', '4.0.2'
 gem 'sqlite3'
 gem 'haml'
 gem 'bootstrap-sass'
+# TODO move to developement
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'awesome_print'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

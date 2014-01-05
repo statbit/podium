@@ -10,6 +10,7 @@ Podium::Application.routes.draw do
 
   resource :main, only: :show
   get 'main/all_on_spotify' => 'main#all_on_spotify'
+  get 'main/all_on_itunes' => 'main#all_on_itunes'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
